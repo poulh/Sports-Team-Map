@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA19EBCA25B3C1C30065CC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBC925B3C1C30065CC1E /* AppDelegate.swift */; };
+		BA19EBCC25B3C1C30065CC1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBCB25B3C1C30065CC1E /* ViewController.swift */; };
+		BA19EBCE25B3C1C40065CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */; };
+		BA19EBD125B3C1C40065CC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA19EBCF25B3C1C40065CC1E /* Main.storyboard */; };
+		BA19EBDD25B3C1C40065CC1E /* Football_ReorgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBDC25B3C1C40065CC1E /* Football_ReorgTests.swift */; };
+		BA19EBE825B3C1C40065CC1E /* Football_ReorgUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBE725B3C1C40065CC1E /* Football_ReorgUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA19EBD925B3C1C40065CC1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA19EBBE25B3C1C30065CC1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA19EBC525B3C1C30065CC1E;
+			remoteInfo = "Football Reorg";
+		};
+		BA19EBE425B3C1C40065CC1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA19EBBE25B3C1C30065CC1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA19EBC525B3C1C30065CC1E;
+			remoteInfo = "Football Reorg";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA19EBC625B3C1C30065CC1E /* Football Reorg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football Reorg.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19EBC925B3C1C30065CC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA19EBCB25B3C1C30065CC1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA19EBD025B3C1C40065CC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA19EBD225B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA19EBD325B3C1C40065CC1E /* Football_Reorg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Football_Reorg.entitlements; sourceTree = "<group>"; };
+		BA19EBD825B3C1C40065CC1E /* Football ReorgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Football ReorgTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19EBDC25B3C1C40065CC1E /* Football_ReorgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football_ReorgTests.swift; sourceTree = "<group>"; };
+		BA19EBDE25B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA19EBE325B3C1C40065CC1E /* Football ReorgUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Football ReorgUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19EBE725B3C1C40065CC1E /* Football_ReorgUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football_ReorgUITests.swift; sourceTree = "<group>"; };
+		BA19EBE925B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA19EBC325B3C1C30065CC1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA19EBD525B3C1C40065CC1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA19EBE025B3C1C40065CC1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA19EBBD25B3C1C30065CC1E = {
+			isa = PBXGroup;
+			children = (
+				BA19EBC825B3C1C30065CC1E /* Football Reorg */,
+				BA19EBDB25B3C1C40065CC1E /* Football ReorgTests */,
+				BA19EBE625B3C1C40065CC1E /* Football ReorgUITests */,
+				BA19EBC725B3C1C30065CC1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA19EBC725B3C1C30065CC1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA19EBC625B3C1C30065CC1E /* Football Reorg.app */,
+				BA19EBD825B3C1C40065CC1E /* Football ReorgTests.xctest */,
+				BA19EBE325B3C1C40065CC1E /* Football ReorgUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA19EBC825B3C1C30065CC1E /* Football Reorg */ = {
+			isa = PBXGroup;
+			children = (
+				BA19EBC925B3C1C30065CC1E /* AppDelegate.swift */,
+				BA19EBCB25B3C1C30065CC1E /* ViewController.swift */,
+				BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */,
+				BA19EBCF25B3C1C40065CC1E /* Main.storyboard */,
+				BA19EBD225B3C1C40065CC1E /* Info.plist */,
+				BA19EBD325B3C1C40065CC1E /* Football_Reorg.entitlements */,
+			);
+			path = "Football Reorg";
+			sourceTree = "<group>";
+		};
+		BA19EBDB25B3C1C40065CC1E /* Football ReorgTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA19EBDC25B3C1C40065CC1E /* Football_ReorgTests.swift */,
+				BA19EBDE25B3C1C40065CC1E /* Info.plist */,
+			);
+			path = "Football ReorgTests";
+			sourceTree = "<group>";
+		};
+		BA19EBE625B3C1C40065CC1E /* Football ReorgUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BA19EBE725B3C1C40065CC1E /* Football_ReorgUITests.swift */,
+				BA19EBE925B3C1C40065CC1E /* Info.plist */,
+			);
+			path = "Football ReorgUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA19EBC525B3C1C30065CC1E /* Football Reorg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA19EBEC25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football Reorg" */;
+			buildPhases = (
+				BA19EBC225B3C1C30065CC1E /* Sources */,
+				BA19EBC325B3C1C30065CC1E /* Frameworks */,
+				BA19EBC425B3C1C30065CC1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Football Reorg";
+			productName = "Football Reorg";
+			productReference = BA19EBC625B3C1C30065CC1E /* Football Reorg.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA19EBD725B3C1C40065CC1E /* Football ReorgTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA19EBEF25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgTests" */;
+			buildPhases = (
+				BA19EBD425B3C1C40065CC1E /* Sources */,
+				BA19EBD525B3C1C40065CC1E /* Frameworks */,
+				BA19EBD625B3C1C40065CC1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA19EBDA25B3C1C40065CC1E /* PBXTargetDependency */,
+			);
+			name = "Football ReorgTests";
+			productName = "Football ReorgTests";
+			productReference = BA19EBD825B3C1C40065CC1E /* Football ReorgTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BA19EBE225B3C1C40065CC1E /* Football ReorgUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA19EBF225B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgUITests" */;
+			buildPhases = (
+				BA19EBDF25B3C1C40065CC1E /* Sources */,
+				BA19EBE025B3C1C40065CC1E /* Frameworks */,
+				BA19EBE125B3C1C40065CC1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA19EBE525B3C1C40065CC1E /* PBXTargetDependency */,
+			);
+			name = "Football ReorgUITests";
+			productName = "Football ReorgUITests";
+			productReference = BA19EBE325B3C1C40065CC1E /* Football ReorgUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA19EBBE25B3C1C30065CC1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					BA19EBC525B3C1C30065CC1E = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					BA19EBD725B3C1C40065CC1E = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = BA19EBC525B3C1C30065CC1E;
+					};
+					BA19EBE225B3C1C40065CC1E = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = BA19EBC525B3C1C30065CC1E;
+					};
+				};
+			};
+			buildConfigurationList = BA19EBC125B3C1C30065CC1E /* Build configuration list for PBXProject "Football Reorg" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA19EBBD25B3C1C30065CC1E;
+			productRefGroup = BA19EBC725B3C1C30065CC1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA19EBC525B3C1C30065CC1E /* Football Reorg */,
+				BA19EBD725B3C1C40065CC1E /* Football ReorgTests */,
+				BA19EBE225B3C1C40065CC1E /* Football ReorgUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA19EBC425B3C1C30065CC1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA19EBCE25B3C1C40065CC1E /* Assets.xcassets in Resources */,
+				BA19EBD125B3C1C40065CC1E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA19EBD625B3C1C40065CC1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA19EBE125B3C1C40065CC1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA19EBC225B3C1C30065CC1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA19EBCC25B3C1C30065CC1E /* ViewController.swift in Sources */,
+				BA19EBCA25B3C1C30065CC1E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA19EBD425B3C1C40065CC1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA19EBDD25B3C1C40065CC1E /* Football_ReorgTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA19EBDF25B3C1C40065CC1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA19EBE825B3C1C40065CC1E /* Football_ReorgUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA19EBDA25B3C1C40065CC1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA19EBC525B3C1C30065CC1E /* Football Reorg */;
+			targetProxy = BA19EBD925B3C1C40065CC1E /* PBXContainerItemProxy */;
+		};
+		BA19EBE525B3C1C40065CC1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA19EBC525B3C1C30065CC1E /* Football Reorg */;
+			targetProxy = BA19EBE425B3C1C40065CC1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA19EBCF25B3C1C40065CC1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA19EBD025B3C1C40065CC1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA19EBEA25B3C1C40065CC1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA19EBEB25B3C1C40065CC1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BA19EBED25B3C1C40065CC1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Football Reorg/Football_Reorg.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU6579QH8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Football Reorg/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-Reorg";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BA19EBEE25B3C1C40065CC1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Football Reorg/Football_Reorg.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU6579QH8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Football Reorg/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-Reorg";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		BA19EBF025B3C1C40065CC1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU6579QH8;
+				INFOPLIST_FILE = "Football ReorgTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-ReorgTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Football Reorg.app/Contents/MacOS/Football Reorg";
+			};
+			name = Debug;
+		};
+		BA19EBF125B3C1C40065CC1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU6579QH8;
+				INFOPLIST_FILE = "Football ReorgTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-ReorgTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Football Reorg.app/Contents/MacOS/Football Reorg";
+			};
+			name = Release;
+		};
+		BA19EBF325B3C1C40065CC1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU6579QH8;
+				INFOPLIST_FILE = "Football ReorgUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-ReorgUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Football Reorg";
+			};
+			name = Debug;
+		};
+		BA19EBF425B3C1C40065CC1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4KU6579QH8;
+				INFOPLIST_FILE = "Football ReorgUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-ReorgUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Football Reorg";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA19EBC125B3C1C30065CC1E /* Build configuration list for PBXProject "Football Reorg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA19EBEA25B3C1C40065CC1E /* Debug */,
+				BA19EBEB25B3C1C40065CC1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA19EBEC25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football Reorg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA19EBED25B3C1C40065CC1E /* Debug */,
+				BA19EBEE25B3C1C40065CC1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA19EBEF25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA19EBF025B3C1C40065CC1E /* Debug */,
+				BA19EBF125B3C1C40065CC1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA19EBF225B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA19EBF325B3C1C40065CC1E /* Debug */,
+				BA19EBF425B3C1C40065CC1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA19EBBE25B3C1C30065CC1E /* Project object */;
+}
