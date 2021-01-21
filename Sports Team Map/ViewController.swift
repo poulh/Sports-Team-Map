@@ -8,11 +8,13 @@
 import Cocoa
 import MapKit
 
-class ViewController: NSViewController , MKMapViewDelegate {
+class ViewController: NSViewController {
 
     var array : [CLLocationCoordinate2D] = []
 
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Teams").appendingPathExtension("plist")
+    
+    let teamManager = TeamManager()
     
     var teams : [Team] = []
     
@@ -20,74 +22,36 @@ class ViewController: NSViewController , MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-
-        print(dataFilePath)
+        mapView.delegate = self
         
-        let teamsPath = URL(fileURLWithPath: Bundle.main.path(forResource: "Teams", ofType: "plist")!)
-        if let data = try? Data(contentsOf: teamsPath) {
-            let decoder = PropertyListDecoder()
-            do {
-                self.teams = try decoder.decode([Team].self, from: data)
-            } catch {
-                print(error)
-            }
+        guard let defaultURL = teamManager.defaultURL,
+              let teams = teamManager.read(from: defaultURL) else {
+            
+            return
         }
-        print(teams)
-        for team in teams {
+        
+        self.teams = teams
+        
+
+        for team in self.teams {
             self.mapView.addAnnotation(team)
         }
-        return
-        var done = 0
-        for team in teams {
-            if team.latitude != 0.0 && team.longitude != 0.0 {
-                print("\(team.title!) has coordinates. skipping")
-                continue
-            }
-            return
-            let request = MKLocalSearch.Request()
-            request.naturalLanguageQuery = team.subtitle
-            MKLocalSearch(request: request).start { (response, error) in
-                
-                if let mapItems = response?.mapItems {
-                    for mapItem in mapItems {
-                        done = done + 1
-                        team.latitude = mapItem.placemark.coordinate.latitude
-                        team.longitude = mapItem.placemark.coordinate.longitude
-                        
-                        if done == self.teams.count {
-                            print("have all coordinates")
-                            let encoder = PropertyListEncoder()
-                            do {
-                                let data = try encoder.encode(self.teams)
-                                try data.write(to: self.dataFilePath!)
-                            } catch {
-                                print(error)
-                            }
-                        }
-                        //                        if self.array.count < 4 {
-//                       //     print("adding \(team.title)")
-//                            self.array.append(team.coordinate)
-//                        } else if firstTime == false {
-//                            firstTime = true
-//                            print("making poly")
-//
-//                            let poly = MKPolygon(coordinates: &self.array, count: self.array.count)
-//
-//                            DispatchQueue.main.async {
-//                                print("drawing")
-//                                print(poly)
-//
-//
-//                            }
-//                        }
-                        DispatchQueue.main.async {
-                            self.mapView.addAnnotation(team)
-                        }
-                    }
-                }
-            }
+       
+        
+        let filteredTeams = self.teams.filter { (team) -> Bool in
+            return team.division == "North" && team.conference == "AFC"
+        }
+        
+        
+        let coordiates = filteredTeams.map { (team) -> CLLocationCoordinate2D in
+            return team.coordinate
         }
 
+        
+        let poly = MKPolygon(coordinates: coordiates, count: coordiates.count)
+
+        
+        mapView.addOverlay(poly)
 
         //  mapView.addAnnotation(artwork)
        // let ann = MKAnnotation(
@@ -104,3 +68,30 @@ class ViewController: NSViewController , MKMapViewDelegate {
 
 }
 
+extension ViewController : MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        print("make an overlay!")
+        if overlay is MKPolygon {
+            let renderer = MKPolygonRenderer(overlay: overlay)
+            renderer.fillColor = NSColor.purple.withAlphaComponent(0.5)
+            renderer.strokeColor = NSColor.blue
+            renderer.lineWidth = 2
+            return renderer
+        }
+//        if overlay is MKCircle {
+//            let renderer = MKCircleRenderer(overlay: overlay)
+//            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+//            renderer.strokeColor = UIColor.blue
+//            renderer.lineWidth = 2
+//            return renderer
+//
+//        } else if overlay is MKPolyline {
+//            let renderer = MKPolylineRenderer(overlay: overlay)
+//            renderer.strokeColor = UIColor.orange
+//            renderer.lineWidth = 3
+//            return renderer
+//        }
+        
+        return MKOverlayRenderer()
+    }
+}
