@@ -1,14 +1,14 @@
 //
-//  Football_ReorgTests.swift
+//  Sports_Team_MapTests.swift
 //  Football ReorgTests
 //
 //  Created by Poul Hornsleth on 1/16/21.
 //
 
 import XCTest
-@testable import Football_Reorg
+@testable import Sports_Team_Map
 
-class Football_ReorgTests: XCTestCase {
+class Sports_Team_MapTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

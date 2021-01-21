@@ -11,8 +11,9 @@
 		BA19EBCC25B3C1C30065CC1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBCB25B3C1C30065CC1E /* ViewController.swift */; };
 		BA19EBCE25B3C1C40065CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */; };
 		BA19EBD125B3C1C40065CC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA19EBCF25B3C1C40065CC1E /* Main.storyboard */; };
-		BA19EBDD25B3C1C40065CC1E /* Football_ReorgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBDC25B3C1C40065CC1E /* Football_ReorgTests.swift */; };
-		BA19EBE825B3C1C40065CC1E /* Football_ReorgUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBE725B3C1C40065CC1E /* Football_ReorgUITests.swift */; };
+		BA19EBDD25B3C1C40065CC1E /* Sports_Team_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBDC25B3C1C40065CC1E /* Sports_Team_MapTests.swift */; };
+		BA19EBE825B3C1C40065CC1E /* Sports_Team_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */; };
+		BADF236625BA048300BA5DE5 /* Teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = BADF236525BA048300BA5DE5 /* Teams.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,19 +34,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA19EBC625B3C1C30065CC1E /* Football Reorg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football Reorg.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19EBC625B3C1C30065CC1E /* Sports Team Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Team Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA19EBC925B3C1C30065CC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA19EBCB25B3C1C30065CC1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA19EBD025B3C1C40065CC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA19EBD225B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA19EBD325B3C1C40065CC1E /* Football_Reorg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Football_Reorg.entitlements; sourceTree = "<group>"; };
-		BA19EBD825B3C1C40065CC1E /* Football ReorgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Football ReorgTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA19EBDC25B3C1C40065CC1E /* Football_ReorgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football_ReorgTests.swift; sourceTree = "<group>"; };
+		BA19EBD325B3C1C40065CC1E /* Sports_Team_Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sports_Team_Map.entitlements; sourceTree = "<group>"; };
+		BA19EBD825B3C1C40065CC1E /* Sports Team MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Team MapTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19EBDC25B3C1C40065CC1E /* Sports_Team_MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_Team_MapTests.swift; sourceTree = "<group>"; };
 		BA19EBDE25B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA19EBE325B3C1C40065CC1E /* Football ReorgUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Football ReorgUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA19EBE725B3C1C40065CC1E /* Football_ReorgUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football_ReorgUITests.swift; sourceTree = "<group>"; };
+		BA19EBE325B3C1C40065CC1E /* Sports Team MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Team MapUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_Team_MapUITests.swift; sourceTree = "<group>"; };
 		BA19EBE925B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADF236525BA048300BA5DE5 /* Teams.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Teams.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +78,9 @@
 		BA19EBBD25B3C1C30065CC1E = {
 			isa = PBXGroup;
 			children = (
-				BA19EBC825B3C1C30065CC1E /* Football Reorg */,
-				BA19EBDB25B3C1C40065CC1E /* Football ReorgTests */,
-				BA19EBE625B3C1C40065CC1E /* Football ReorgUITests */,
+				BA19EBC825B3C1C30065CC1E /* Sports Team Map */,
+				BA19EBDB25B3C1C40065CC1E /* Sports Team MapTests */,
+				BA19EBE625B3C1C40065CC1E /* Sports Team MapUITests */,
 				BA19EBC725B3C1C30065CC1E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,50 +88,51 @@
 		BA19EBC725B3C1C30065CC1E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA19EBC625B3C1C30065CC1E /* Football Reorg.app */,
-				BA19EBD825B3C1C40065CC1E /* Football ReorgTests.xctest */,
-				BA19EBE325B3C1C40065CC1E /* Football ReorgUITests.xctest */,
+				BA19EBC625B3C1C30065CC1E /* Sports Team Map.app */,
+				BA19EBD825B3C1C40065CC1E /* Sports Team MapTests.xctest */,
+				BA19EBE325B3C1C40065CC1E /* Sports Team MapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA19EBC825B3C1C30065CC1E /* Football Reorg */ = {
+		BA19EBC825B3C1C30065CC1E /* Sports Team Map */ = {
 			isa = PBXGroup;
 			children = (
 				BA19EBC925B3C1C30065CC1E /* AppDelegate.swift */,
 				BA19EBCB25B3C1C30065CC1E /* ViewController.swift */,
 				BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */,
+				BADF236525BA048300BA5DE5 /* Teams.plist */,
 				BA19EBCF25B3C1C40065CC1E /* Main.storyboard */,
 				BA19EBD225B3C1C40065CC1E /* Info.plist */,
-				BA19EBD325B3C1C40065CC1E /* Football_Reorg.entitlements */,
+				BA19EBD325B3C1C40065CC1E /* Sports_Team_Map.entitlements */,
 			);
-			path = "Football Reorg";
+			path = "Sports Team Map";
 			sourceTree = "<group>";
 		};
-		BA19EBDB25B3C1C40065CC1E /* Football ReorgTests */ = {
+		BA19EBDB25B3C1C40065CC1E /* Sports Team MapTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA19EBDC25B3C1C40065CC1E /* Football_ReorgTests.swift */,
+				BA19EBDC25B3C1C40065CC1E /* Sports_Team_MapTests.swift */,
 				BA19EBDE25B3C1C40065CC1E /* Info.plist */,
 			);
-			path = "Football ReorgTests";
+			path = "Sports Team MapTests";
 			sourceTree = "<group>";
 		};
-		BA19EBE625B3C1C40065CC1E /* Football ReorgUITests */ = {
+		BA19EBE625B3C1C40065CC1E /* Sports Team MapUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BA19EBE725B3C1C40065CC1E /* Football_ReorgUITests.swift */,
+				BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */,
 				BA19EBE925B3C1C40065CC1E /* Info.plist */,
 			);
-			path = "Football ReorgUITests";
+			path = "Sports Team MapUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA19EBC525B3C1C30065CC1E /* Football Reorg */ = {
+		BA19EBC525B3C1C30065CC1E /* Sports Team Map */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA19EBEC25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football Reorg" */;
+			buildConfigurationList = BA19EBEC25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Sports Team Map" */;
 			buildPhases = (
 				BA19EBC225B3C1C30065CC1E /* Sources */,
 				BA19EBC325B3C1C30065CC1E /* Frameworks */,
@@ -139,14 +142,14 @@
 			);
 			dependencies = (
 			);
-			name = "Football Reorg";
+			name = "Sports Team Map";
 			productName = "Football Reorg";
-			productReference = BA19EBC625B3C1C30065CC1E /* Football Reorg.app */;
+			productReference = BA19EBC625B3C1C30065CC1E /* Sports Team Map.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA19EBD725B3C1C40065CC1E /* Football ReorgTests */ = {
+		BA19EBD725B3C1C40065CC1E /* Sports Team MapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA19EBEF25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgTests" */;
+			buildConfigurationList = BA19EBEF25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Sports Team MapTests" */;
 			buildPhases = (
 				BA19EBD425B3C1C40065CC1E /* Sources */,
 				BA19EBD525B3C1C40065CC1E /* Frameworks */,
@@ -157,14 +160,14 @@
 			dependencies = (
 				BA19EBDA25B3C1C40065CC1E /* PBXTargetDependency */,
 			);
-			name = "Football ReorgTests";
+			name = "Sports Team MapTests";
 			productName = "Football ReorgTests";
-			productReference = BA19EBD825B3C1C40065CC1E /* Football ReorgTests.xctest */;
+			productReference = BA19EBD825B3C1C40065CC1E /* Sports Team MapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BA19EBE225B3C1C40065CC1E /* Football ReorgUITests */ = {
+		BA19EBE225B3C1C40065CC1E /* Sports Team MapUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA19EBF225B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgUITests" */;
+			buildConfigurationList = BA19EBF225B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Sports Team MapUITests" */;
 			buildPhases = (
 				BA19EBDF25B3C1C40065CC1E /* Sources */,
 				BA19EBE025B3C1C40065CC1E /* Frameworks */,
@@ -175,9 +178,9 @@
 			dependencies = (
 				BA19EBE525B3C1C40065CC1E /* PBXTargetDependency */,
 			);
-			name = "Football ReorgUITests";
+			name = "Sports Team MapUITests";
 			productName = "Football ReorgUITests";
-			productReference = BA19EBE325B3C1C40065CC1E /* Football ReorgUITests.xctest */;
+			productReference = BA19EBE325B3C1C40065CC1E /* Sports Team MapUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA19EBC125B3C1C30065CC1E /* Build configuration list for PBXProject "Football Reorg" */;
+			buildConfigurationList = BA19EBC125B3C1C30065CC1E /* Build configuration list for PBXProject "Sports Team Map" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,9 +218,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA19EBC525B3C1C30065CC1E /* Football Reorg */,
-				BA19EBD725B3C1C40065CC1E /* Football ReorgTests */,
-				BA19EBE225B3C1C40065CC1E /* Football ReorgUITests */,
+				BA19EBC525B3C1C30065CC1E /* Sports Team Map */,
+				BA19EBD725B3C1C40065CC1E /* Sports Team MapTests */,
+				BA19EBE225B3C1C40065CC1E /* Sports Team MapUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADF236625BA048300BA5DE5 /* Teams.plist in Resources */,
 				BA19EBCE25B3C1C40065CC1E /* Assets.xcassets in Resources */,
 				BA19EBD125B3C1C40065CC1E /* Main.storyboard in Resources */,
 			);
@@ -262,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA19EBDD25B3C1C40065CC1E /* Football_ReorgTests.swift in Sources */,
+				BA19EBDD25B3C1C40065CC1E /* Sports_Team_MapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA19EBE825B3C1C40065CC1E /* Football_ReorgUITests.swift in Sources */,
+				BA19EBE825B3C1C40065CC1E /* Sports_Team_MapUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,12 +283,12 @@
 /* Begin PBXTargetDependency section */
 		BA19EBDA25B3C1C40065CC1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA19EBC525B3C1C30065CC1E /* Football Reorg */;
+			target = BA19EBC525B3C1C30065CC1E /* Sports Team Map */;
 			targetProxy = BA19EBD925B3C1C40065CC1E /* PBXContainerItemProxy */;
 		};
 		BA19EBE525B3C1C40065CC1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA19EBC525B3C1C30065CC1E /* Football Reorg */;
+			target = BA19EBC525B3C1C30065CC1E /* Sports Team Map */;
 			targetProxy = BA19EBE425B3C1C40065CC1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -421,17 +425,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Football Reorg/Football_Reorg.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Sports Team Map/Sports_Team_Map.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4KU6579QH8;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Football Reorg/Info.plist";
+				INFOPLIST_FILE = "Sports Team Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-Reorg";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Sports-Team-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -442,17 +446,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Football Reorg/Football_Reorg.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Sports Team Map/Sports_Team_Map.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4KU6579QH8;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Football Reorg/Info.plist";
+				INFOPLIST_FILE = "Sports Team Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-Reorg";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Sports-Team-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -476,7 +480,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-ReorgTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Football Reorg.app/Contents/MacOS/Football Reorg";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sports Team Map.app/Contents/MacOS/Sports Team Map";
 			};
 			name = Debug;
 		};
@@ -498,7 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.asquaredsoftware.Football-ReorgTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Football Reorg.app/Contents/MacOS/Football Reorg";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sports Team Map.app/Contents/MacOS/Sports Team Map";
 			};
 			name = Release;
 		};
@@ -545,7 +549,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA19EBC125B3C1C30065CC1E /* Build configuration list for PBXProject "Football Reorg" */ = {
+		BA19EBC125B3C1C30065CC1E /* Build configuration list for PBXProject "Sports Team Map" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA19EBEA25B3C1C40065CC1E /* Debug */,
@@ -554,7 +558,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA19EBEC25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football Reorg" */ = {
+		BA19EBEC25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Sports Team Map" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA19EBED25B3C1C40065CC1E /* Debug */,
@@ -563,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA19EBEF25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgTests" */ = {
+		BA19EBEF25B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Sports Team MapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA19EBF025B3C1C40065CC1E /* Debug */,
@@ -572,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA19EBF225B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Football ReorgUITests" */ = {
+		BA19EBF225B3C1C40065CC1E /* Build configuration list for PBXNativeTarget "Sports Team MapUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA19EBF325B3C1C40065CC1E /* Debug */,
