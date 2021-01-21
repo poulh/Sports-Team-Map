@@ -14,6 +14,8 @@
 		BA19EBDD25B3C1C40065CC1E /* Sports_Team_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBDC25B3C1C40065CC1E /* Sports_Team_MapTests.swift */; };
 		BA19EBE825B3C1C40065CC1E /* Sports_Team_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */; };
 		BADF236625BA048300BA5DE5 /* Teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = BADF236525BA048300BA5DE5 /* Teams.plist */; };
+		BADF238F25BA27CB00BA5DE5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF238E25BA27CB00BA5DE5 /* Team.swift */; };
+		BADF239425BA280800BA5DE5 /* NSColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF239325BA280800BA5DE5 /* NSColorHex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_Team_MapUITests.swift; sourceTree = "<group>"; };
 		BA19EBE925B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADF236525BA048300BA5DE5 /* Teams.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Teams.plist; sourceTree = "<group>"; };
+		BADF238E25BA27CB00BA5DE5 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		BADF239325BA280800BA5DE5 /* NSColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorHex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				BA19EBCF25B3C1C40065CC1E /* Main.storyboard */,
 				BA19EBD225B3C1C40065CC1E /* Info.plist */,
 				BA19EBD325B3C1C40065CC1E /* Sports_Team_Map.entitlements */,
+				BADF238E25BA27CB00BA5DE5 /* Team.swift */,
+				BADF239325BA280800BA5DE5 /* NSColorHex.swift */,
 			);
 			path = "Sports Team Map";
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADF239425BA280800BA5DE5 /* NSColorHex.swift in Sources */,
+				BADF238F25BA27CB00BA5DE5 /* Team.swift in Sources */,
 				BA19EBCC25B3C1C30065CC1E /* ViewController.swift in Sources */,
 				BA19EBCA25B3C1C30065CC1E /* AppDelegate.swift in Sources */,
 			);
