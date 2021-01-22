@@ -35,6 +35,8 @@ class ViewController: NSViewController {
 
         for team in self.teams {
             self.mapView.addAnnotation(team)
+            let influenceCircle = MKCircle(center: team.coordinate, radius: 150 * 1.6 * 1000)
+            mapView.addOverlay(influenceCircle)
         }
        
         
@@ -43,12 +45,9 @@ class ViewController: NSViewController {
         }
         
         
-        let coordiates = filteredTeams.map { (team) -> CLLocationCoordinate2D in
-            return team.coordinate
-        }
-
+        let coordinates = filteredTeams.map { $0.coordinate }
         
-        let poly = MKPolygon(coordinates: coordiates, count: coordiates.count)
+        let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
 
         
         mapView.addOverlay(poly)
@@ -70,8 +69,17 @@ class ViewController: NSViewController {
 
 extension ViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        print("make an overlay!")
+
+        if overlay is MKCircle {
+            print("circle!")
+            let renderer = MKCircleRenderer(overlay: overlay)
+            renderer.fillColor = NSColor.gray.withAlphaComponent(0.25)
+            renderer.strokeColor = NSColor.black
+            renderer.lineWidth = 2
+            return renderer
+        }
         if overlay is MKPolygon {
+            print("polygon!")
             let renderer = MKPolygonRenderer(overlay: overlay)
             renderer.fillColor = NSColor.purple.withAlphaComponent(0.5)
             renderer.strokeColor = NSColor.blue
