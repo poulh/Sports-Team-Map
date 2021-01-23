@@ -56,4 +56,8 @@ class Team : NSObject, MKAnnotation, Codable {
         return "\(city), \(state)"
     }
     
+    var divisionName: String {
+        return "\(conference) \(division)"
+    }
+    
 }
