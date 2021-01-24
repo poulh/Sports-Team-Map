@@ -13,6 +13,7 @@
 		BA19EBD125B3C1C40065CC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA19EBCF25B3C1C40065CC1E /* Main.storyboard */; };
 		BA19EBDD25B3C1C40065CC1E /* Sports_Team_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBDC25B3C1C40065CC1E /* Sports_Team_MapTests.swift */; };
 		BA19EBE825B3C1C40065CC1E /* Sports_Team_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */; };
+		BACB508425BCE4B70095F77D /* Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB508325BCE4B70095F77D /* Permutations.swift */; };
 		BADF236625BA048300BA5DE5 /* Teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = BADF236525BA048300BA5DE5 /* Teams.plist */; };
 		BADF238F25BA27CB00BA5DE5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF238E25BA27CB00BA5DE5 /* Team.swift */; };
 		BADF239425BA280800BA5DE5 /* NSColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF239325BA280800BA5DE5 /* NSColorHex.swift */; };
@@ -50,6 +51,7 @@
 		BA19EBE325B3C1C40065CC1E /* Sports Team MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Team MapUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_Team_MapUITests.swift; sourceTree = "<group>"; };
 		BA19EBE925B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BACB508325BCE4B70095F77D /* Permutations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutations.swift; sourceTree = "<group>"; };
 		BADF236525BA048300BA5DE5 /* Teams.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Teams.plist; sourceTree = "<group>"; };
 		BADF238E25BA27CB00BA5DE5 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		BADF239325BA280800BA5DE5 /* NSColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorHex.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				BADF238E25BA27CB00BA5DE5 /* Team.swift */,
 				BADF239325BA280800BA5DE5 /* NSColorHex.swift */,
 				BADF239825BA29CA00BA5DE5 /* TeamManager.swift */,
+				BACB508325BCE4B70095F77D /* Permutations.swift */,
 			);
 			path = "Sports Team Map";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				BADF239425BA280800BA5DE5 /* NSColorHex.swift in Sources */,
 				BADF238F25BA27CB00BA5DE5 /* Team.swift in Sources */,
+				BACB508425BCE4B70095F77D /* Permutations.swift in Sources */,
 				BA19EBCC25B3C1C30065CC1E /* ViewController.swift in Sources */,
 				BA19EBCA25B3C1C30065CC1E /* AppDelegate.swift in Sources */,
 				BADF239925BA29CA00BA5DE5 /* TeamManager.swift in Sources */,

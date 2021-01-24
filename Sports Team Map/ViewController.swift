@@ -30,9 +30,14 @@ class ViewController: NSViewController {
         
         teamManager.initDefault()
 
-        for team in teamManager.teams {
-            self.mapView.addAnnotation(team)
-        }
+        self.mapView.fitAll(in: teamManager.teams, andShow: true)
+
+        //        for team in teamManager.teams {
+//            self.mapView.addAnnotation(team)
+//        }
+//
+//        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+
     }
 
     override var representedObject: Any? {
@@ -110,13 +115,11 @@ extension ViewController  : NSTableViewDelegate{
             print(conference)
             if let divisions :[String: [Team]] = teamManager.teamMap[conference] {
                 for (_, teams) in divisions {
-                    var  coordinates = teams.map { $0.coordinate }
-                    coordinates = coordinates.sorted { (lhs, rhs) -> Bool in
-                        lhs.longitude < rhs.longitude
-                        
-                    }
+                    let sortedTeams = teamManager.shortestTour(teams: teams)
+                    let coordinates = teamManager.shortestTour(teams: sortedTeams).map {$0.coordinate}
                     let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
                     mapView.addOverlay(poly)
+                    
                 }
             }
 
@@ -125,17 +128,54 @@ extension ViewController  : NSTableViewDelegate{
                   let divisionName = division.last {
 
             if let teams = teamManager.teamMap[divisionConference]?[divisionName] {
-                var  coordinates = teams.map { $0.coordinate }
-                coordinates = coordinates.sorted { (lhs, rhs) -> Bool in
-                    lhs.longitude < rhs.longitude
-                }
+                let sortedTeams = teamManager.shortestTour(teams: teams)
+                let coordinates = teamManager.shortestTour(teams: sortedTeams).map {$0.coordinate}
                 let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
                 mapView.addOverlay(poly)
-
             }
         } else if let team = obj as? Team {
             let influenceCircle = MKCircle(center: team.coordinate, radius: 150 * 1.6 * 1000)
             mapView.addOverlay(influenceCircle)
         }
     }
+}
+
+extension MKMapView {
+    /// when we call this function, we have already added the annotations to the map, and just want all of them to be displayed.
+    func fitAll() {
+        var zoomRect            = MKMapRect.null;
+        for annotation in annotations {
+            let annotationPoint = MKMapPoint(annotation.coordinate)
+            let pointRect       = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0.01, height: 0.01);
+            zoomRect            = zoomRect.union(pointRect);
+        }
+
+        // setVisibleMapRect(zoomRect, edgePadding: NSEdgeInsets(top: 100, left: 100, bottom: 100, right: 100), animated: true)
+        setVisibleMapRect(zoomRect, animated: true)
+    }
+
+    /// we call this function and give it the annotations we want added to the map. we display the annotations if necessary
+    func fitAll(in annotations: [MKAnnotation], andShow show: Bool) {
+        var zoomRect:MKMapRect  = MKMapRect.null
+
+        for annotation in annotations {
+            let aPoint          = MKMapPoint(annotation.coordinate)
+            let rect            = MKMapRect(x: aPoint.x, y: aPoint.y, width: 0.1, height: 0.1)
+
+            if zoomRect.isNull {
+                zoomRect = rect
+            } else {
+                zoomRect = zoomRect.union(rect)
+            }
+        }
+        if(show) {
+            addAnnotations(annotations)
+        }
+        
+        
+        
+        // setVisibleMapRect(zoomRect, edgePadding: NSEdgeInsets(top: 100, left: 100, bottom: 100, right: 100), animated: true)
+        setVisibleMapRect(zoomRect, animated: true)
+    }
+
 }

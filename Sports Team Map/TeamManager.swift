@@ -8,6 +8,7 @@
 import Foundation
 import MapKit
 
+
 protocol TeamManagerDelegate {
     func onSsearchCoordinateResults(_: Team, _: MKMapItem)
     func onSearchCoordinateError(error: Error)
@@ -146,6 +147,34 @@ class TeamManager {
         } catch {
             delegate?.onWriteError(error: error)
         }
+    }
+    
+    func shortestTour( teams: [Team]) -> [Team] {
+        let tours = permutations(xs: teams)
+        var shortestTourDistance : CLLocationDistance = CLLocationDistance.greatestFiniteMagnitude
+        var shortestTour : [Team] = []
+        for tour in tours {
+            if var currentStopLocation = tour.last?.locaton {
+                var currentTourDistance : CLLocationDistance = 0.0
+                for nextStopOnTour in tour[0..<tour.count] {
+                    let nextStopLocation = nextStopOnTour.locaton
+                    let nextDistance = currentStopLocation.distance(from: nextStopLocation)
+                    currentTourDistance += nextDistance
+                    if currentTourDistance >= shortestTourDistance {
+                        break
+                    }
+                        
+                    currentStopLocation = nextStopLocation
+                    
+                }
+                
+                if currentTourDistance < shortestTourDistance {
+                    shortestTour = tour
+                    shortestTourDistance = currentTourDistance
+                }
+            }
+        }
+        return shortestTour
     }
     
 }

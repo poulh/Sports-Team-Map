@@ -40,6 +40,10 @@ class Team : NSObject, MKAnnotation, Codable {
         return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
     
+    var locaton : CLLocation {
+        return CLLocation(latitude: self.latitude, longitude: self.longitude)
+    }
+    
     var primaryColor : NSColor {
         return NSColor(hex: primaryColorHex) ?? .white
     }
