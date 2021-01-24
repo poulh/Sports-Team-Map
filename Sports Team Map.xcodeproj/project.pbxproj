@@ -14,6 +14,7 @@
 		BA19EBDD25B3C1C40065CC1E /* Sports_Team_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBDC25B3C1C40065CC1E /* Sports_Team_MapTests.swift */; };
 		BA19EBE825B3C1C40065CC1E /* Sports_Team_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */; };
 		BACB508425BCE4B70095F77D /* Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB508325BCE4B70095F77D /* Permutations.swift */; };
+		BACB508925BD099D0095F77D /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB508825BD099D0095F77D /* Group.swift */; };
 		BADF236625BA048300BA5DE5 /* Teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = BADF236525BA048300BA5DE5 /* Teams.plist */; };
 		BADF238F25BA27CB00BA5DE5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF238E25BA27CB00BA5DE5 /* Team.swift */; };
 		BADF239425BA280800BA5DE5 /* NSColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF239325BA280800BA5DE5 /* NSColorHex.swift */; };
@@ -52,6 +53,7 @@
 		BA19EBE725B3C1C40065CC1E /* Sports_Team_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_Team_MapUITests.swift; sourceTree = "<group>"; };
 		BA19EBE925B3C1C40065CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BACB508325BCE4B70095F77D /* Permutations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutations.swift; sourceTree = "<group>"; };
+		BACB508825BD099D0095F77D /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		BADF236525BA048300BA5DE5 /* Teams.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Teams.plist; sourceTree = "<group>"; };
 		BADF238E25BA27CB00BA5DE5 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		BADF239325BA280800BA5DE5 /* NSColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorHex.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		BA19EBC825B3C1C30065CC1E /* Sports Team Map */ = {
 			isa = PBXGroup;
 			children = (
+				BACB508825BD099D0095F77D /* Group.swift */,
 				BA19EBC925B3C1C30065CC1E /* AppDelegate.swift */,
 				BA19EBCB25B3C1C30065CC1E /* ViewController.swift */,
 				BA19EBCD25B3C1C40065CC1E /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACB508925BD099D0095F77D /* Group.swift in Sources */,
 				BADF239425BA280800BA5DE5 /* NSColorHex.swift in Sources */,
 				BADF238F25BA27CB00BA5DE5 /* Team.swift in Sources */,
 				BACB508425BCE4B70095F77D /* Permutations.swift in Sources */,

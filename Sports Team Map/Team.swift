@@ -52,8 +52,11 @@ class Team : NSObject, MKAnnotation, Codable {
         return NSColor(hex: secondaryColorHex) ?? .white
     }
     
-    var title : String? {
+    var fullName : String {
         return "\(name ?? city) \(mascot)"
+    }
+    var title : String? {
+        return fullName
     }
     
     var subtitle: String? {

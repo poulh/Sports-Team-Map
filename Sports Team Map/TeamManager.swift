@@ -19,11 +19,10 @@ protocol TeamManagerDelegate {
 }
 
 class TeamManager {
-    
-    var teamMap : [String :[String:[Team]] ] = [:]
-    var uiArray : [Any] = []
-    
+
     var delegate : TeamManagerDelegate?
+    
+    var group = Group(withName: "NFL", andTeams: [])
     
     let basename = "Teams"
     let filetype = "plist"
@@ -69,60 +68,19 @@ class TeamManager {
         }
         
         for team in teams {
-            var div = teamMap[team.conference, default: [:] ]
-            var teams :[Team] = div[team.division, default: []]
-                // now val is not nil and the Optional has been unwrapped, so use it
-            teams.append(team)
-            div[team.division] = teams
-            teamMap[team.conference] = div
+            if (group.addTeam(team, toGroupPath: [team.conference,team.division]) == false) {
+                print("could not add \(team.fullName)")
+            } 
+          
         }
-        rebuildUITable()
+        print(group.teams())
+        print(group.teamsAndGroups())
         //self.teams = teams
     }
     
-    var conferences : [String] {
-        return Array(teamMap.keys)
-    }
-    
-    var divisions : [String] {
-        let div = teamMap.map { $1.keys }
-        print (div)
-        return div.reduce([], +) // flatten the array of arrays
-    }
-    
-    var teams : [Team] {
-        var t :[ Team ] = []
-        for (_, divisions) in teamMap {
 
-            for (_, teams) in divisions {
-                
-                for team in teams {
-                    t.append(team)
-                }
-            }
-        }
-        return t
-    }
-    
-    func uiTableRowCount() -> Int {
-        return uiArray.count
-       // return conferences.count + divisions.count + teams.count
-    }
-    
-    func rebuildUITable() {
-        self.uiArray = []
-        for (conference, divisions) in teamMap {
-            uiArray.append(conference)
-            for (division, teams) in divisions {
-                
-                uiArray.append([conference,division])
-                for team in teams {
-                    uiArray.append(team)
-                }
-            }
-        }
-        print("ui count: \(uiArray.count)")
-    }
+
+
     
     func read(from teamsPath: URL) -> [Team]? {
 //        guard let teamsPath = teamsPath else {

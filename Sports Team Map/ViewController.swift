@@ -30,7 +30,7 @@ class ViewController: NSViewController {
         
         teamManager.initDefault()
 
-        self.mapView.fitAll(in: teamManager.teams, andShow: true)
+        self.mapView.fitAll(in: teamManager.group.teams(), andShow: true)
 
         //        for team in teamManager.teams {
 //            self.mapView.addAnnotation(team)
@@ -71,7 +71,7 @@ extension ViewController : MKMapViewDelegate {
 
 extension ViewController : NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return teamManager.uiArray.count
+        return teamManager.group.teamsAndGroups().count
     }
 }
 
@@ -79,28 +79,21 @@ extension ViewController : NSTableViewDataSource {
 extension ViewController  : NSTableViewDelegate{
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let obj = teamManager.uiArray[row]
-        
-        if let conference = obj as? String {
-            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TeamCellID"), owner: nil) as? NSTableCellView {
 
-                cell.textField?.stringValue = conference
+        let groupOrTeam = teamManager.group.teamsAndGroups()[row]
+        if let divisionOrConference = groupOrTeam as? Group {
+            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TeamCellID"), owner: nil) as? NSTableCellView {
+                
+                cell.textField?.stringValue = divisionOrConference.path.joined(separator: "/")
                 cell.textField?.textColor = .red
-
+                
                 return cell
             }
-
-        } else if let division = obj as? NSArray {
+        }
+        else if let team = groupOrTeam as? Team {
             if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TeamCellID"), owner: nil) as? NSTableCellView {
-
-                cell.textField?.stringValue = "\(division.firstObject!) \(division.lastObject!)"
-                cell.textField?.textColor = .orange
-                return cell
-            }
-        } else if let team = obj as? Team {
-            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TeamCellID"), owner: nil) as? NSTableCellView {
-
-                cell.textField?.stringValue = team.title!
+                
+                cell.textField?.stringValue = team.fullName
                 return cell
             }
         }
@@ -108,32 +101,28 @@ extension ViewController  : NSTableViewDelegate{
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        let obj = teamManager.uiArray[tableView.selectedRow]
+
+        let groupOrTeam = teamManager.group.teamsAndGroups()[tableView.selectedRow]
+
         mapView.removeOverlays(mapView.overlays)
 
-        if let conference = obj as? String {
-            print(conference)
-            if let divisions :[String: [Team]] = teamManager.teamMap[conference] {
-                for (_, teams) in divisions {
-                    let sortedTeams = teamManager.shortestTour(teams: teams)
-                    let coordinates = teamManager.shortestTour(teams: sortedTeams).map {$0.coordinate}
-                    let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
-                    mapView.addOverlay(poly)
-                    
-                }
-            }
-
-        } else if let division = obj as? [String],
-                  let divisionConference = division.first,
-                  let divisionName = division.last {
-
-            if let teams = teamManager.teamMap[divisionConference]?[divisionName] {
-                let sortedTeams = teamManager.shortestTour(teams: teams)
-                let coordinates = teamManager.shortestTour(teams: sortedTeams).map {$0.coordinate}
+        if let divisionOrConference = groupOrTeam as? Group {
+            if divisionOrConference.subGroupDict.isEmpty {
+                let teams = divisionOrConference.teams()
+                let coordinates = teamManager.shortestTour(teams: teams).map {$0.coordinate}
                 let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
                 mapView.addOverlay(poly)
             }
-        } else if let team = obj as? Team {
+            else {
+                for group in divisionOrConference.subGroupDict.values {
+                    let teams = group.teams()
+                    let coordinates = teamManager.shortestTour(teams: teams).map {$0.coordinate}
+                    let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
+                    mapView.addOverlay(poly)
+                }
+            }
+        }
+        else if let team = groupOrTeam as? Team {
             let influenceCircle = MKCircle(center: team.coordinate, radius: 150 * 1.6 * 1000)
             mapView.addOverlay(influenceCircle)
         }
