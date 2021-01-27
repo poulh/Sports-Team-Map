@@ -27,7 +27,7 @@ class Group {
             parentPath.append(name)
             return parentPath
         }
-        return [name]
+        return []
     }
     
     func addTeam(_ team:Team) -> Bool {
@@ -35,11 +35,13 @@ class Group {
             return false
         }
         teamsDict[team.fullName] = team
+        team.group = self.path
         return true
     }
     
-    func addTeam(_ team:Team, toGroupPath: [String]) -> Bool {
-        var pathComponents = toGroupPath
+   
+    func addTeam(_ team:Team, toGroupPath groupPath: [String]) -> Bool {
+        var pathComponents = groupPath
         if pathComponents.isEmpty {
             return addTeam(team)
         }
@@ -52,9 +54,6 @@ class Group {
         return false
     }
     
-    func removeTeam(_ team:Team) -> Team? {
-        return self.teamsDict.removeValue(forKey: team.fullName)
-    }
     
     func addTeams( _ teams: [Team]) -> Bool {
         for team in teams {
@@ -64,6 +63,26 @@ class Group {
             }
         }
         return true
+    }
+    
+    func removeTeam(_ team:Team) -> Team? {
+        let team =  self.teamsDict.removeValue(forKey: team.fullName)
+        team?.group = nil
+        return team
+    }
+    
+    func getSubGroup(atPath groupPath: [String]) -> Group? {
+        var pathComponents = groupPath
+
+        if pathComponents.isEmpty {
+            return self
+        } else {
+            let first = pathComponents.removeFirst()
+            if let subGroup = subGroupDict[first] {
+                return subGroup.getSubGroup(atPath: pathComponents)
+            }
+        }
+        return nil
     }
     
     func addSubGroup(withName name: String) -> Group? {

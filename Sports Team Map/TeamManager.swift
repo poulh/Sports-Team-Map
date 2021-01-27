@@ -22,7 +22,7 @@ class TeamManager {
 
     var delegate : TeamManagerDelegate?
     
-    var group = Group(withName: "NFL", andTeams: [])
+    var group = Group(withName: "Sports Team Maps", andTeams: [])
     
     let basename = "Teams"
     let filetype = "plist"
@@ -63,25 +63,23 @@ class TeamManager {
     func initDefault() {
         guard let defaultURL = self.defaultURL,
               let teams = self.read(from: defaultURL) else {
-            
+            print(self.defaultURL)
+            print("could not load teams plist")
             return
         }
         
-        for team in teams {
-            if (group.addTeam(team, toGroupPath: [team.conference,team.division]) == false) {
-                print("could not add \(team.fullName)")
-            } 
-          
+        if let nflGroup = group.addSubGroup(withName: "NFL") {
+            for team in teams {
+                if (nflGroup.addTeam(team, toGroupPath: [team.conference,team.division]) == false) {
+                    print("could not add \(team.fullName)")
+                }
+            }
         }
         print(group.teams())
         print(group.teamsAndGroups())
         //self.teams = teams
     }
-    
 
-
-
-    
     func read(from teamsPath: URL) -> [Team]? {
 //        guard let teamsPath = teamsPath else {
 //            return nil
@@ -89,8 +87,10 @@ class TeamManager {
      //   let teamsPath = URL(fileURLWithPath: Bundle.main.path(forResource: "Teams", ofType: "plist")!)
         if let data = try? Data(contentsOf: teamsPath) {
             let decoder = PropertyListDecoder()
-            if let teams = try? decoder.decode([Team].self, from: data) {
-                return teams
+            do {
+                return try decoder.decode([Team].self, from: data)
+            } catch {
+                print(error)
             }
         }
         return nil

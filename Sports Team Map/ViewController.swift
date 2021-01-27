@@ -27,6 +27,7 @@ class ViewController: NSViewController {
         mapView.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.registerForDraggedTypes([.string])
         
         teamManager.initDefault()
 
@@ -73,6 +74,64 @@ extension ViewController : NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return teamManager.group.teamsAndGroups().count
     }
+    
+    func tableView(_ tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
+        print("dragging")
+        let groupOrTeam = teamManager.group.teamsAndGroups()[row]
+        if let team = groupOrTeam as? Team {
+            let pasteboard = NSPasteboardItem()
+            
+            pasteboard.setString("\(row)", forType: .string)
+            return pasteboard
+        }
+        return nil
+    }
+    
+    
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
+        print("validating")
+        let canDrop = (row > 2)
+        print("valid drop \(row)? \(canDrop)")
+        if (canDrop) {
+            return .move
+        }
+        else {
+            return []
+        }
+    }
+    
+    
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
+        print("dropping")
+        let pastboard = info.draggingPasteboard
+        if let sourceRowString = pastboard.string(forType: .string),
+           let sourceRow = Int(sourceRowString),
+           let team = teamManager.group.teamsAndGroups()[sourceRow] as? Team,
+           let teamGroup = team.group,
+           let fromGroup = teamManager.group.getSubGroup(atPath: teamGroup),
+           let toTeam = teamManager.group.teamsAndGroups()[row] as? Team,
+           let toTeamGroup = toTeam.group,
+           let toGroup = teamManager.group.getSubGroup(atPath: toTeamGroup) {
+            
+           if let teamRemoved = fromGroup.removeTeam(team) {
+            if toGroup.addTeam(teamRemoved) {
+                mapView.removeOverlays(mapView.overlays)
+                let teams = toGroup.teams()
+                let coordinates = teamManager.shortestTour(teams: teams).map {$0.coordinate}
+                let poly = MKPolygon(coordinates: coordinates, count: coordinates.count)
+                mapView.addOverlay(poly)
+                tableView.reloadData()
+            }
+            }
+            print("team \(team.fullName) from \(fromGroup.path). dropping row \(toGroup.path)")
+            print(team.fullName)
+            print(team.group)
+            print(toTeam.fullName)
+            print(toTeam.group)
+        }
+        
+        return true
+    }
 }
 
 
@@ -94,6 +153,7 @@ extension ViewController  : NSTableViewDelegate{
             if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TeamCellID"), owner: nil) as? NSTableCellView {
                 
                 cell.textField?.stringValue = team.fullName
+                cell.textField?.textColor = .white
                 return cell
             }
         }
