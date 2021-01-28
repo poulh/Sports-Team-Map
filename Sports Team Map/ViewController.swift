@@ -76,9 +76,8 @@ extension ViewController : NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
-        print("dragging")
         let groupOrTeam = teamManager.group.teamsAndGroups()[row]
-        if let team = groupOrTeam as? Team {
+        if groupOrTeam is Team { // only drag and drop teams right now
             let pasteboard = NSPasteboardItem()
             
             pasteboard.setString("\(row)", forType: .string)
@@ -89,7 +88,6 @@ extension ViewController : NSTableViewDataSource {
     
     
     func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
-        print("validating")
         let canDrop = (row > 2)
         print("valid drop \(row)? \(canDrop)")
         if (canDrop) {
@@ -102,7 +100,6 @@ extension ViewController : NSTableViewDataSource {
     
     
     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
-        print("dropping")
         let pastboard = info.draggingPasteboard
         if let sourceRowString = pastboard.string(forType: .string),
            let sourceRow = Int(sourceRowString),
@@ -113,12 +110,11 @@ extension ViewController : NSTableViewDataSource {
             if let teamRemoved = fromGroup.removeTeam(team) {
                 if toGroup.addTeam(teamRemoved) {
                     mapView.removeOverlays(mapView.overlays)
-                    mapView.addOverlay(toGroup.polygon)
+                    mapView.addOverlay(toGroup.calculateShortestTourPolygon())
                     tableView.reloadData()
                 }
             }
         }
-        
         return true
     }
 }
@@ -158,11 +154,11 @@ extension ViewController  : NSTableViewDelegate{
         if let someKindOfGroup = groupOrTeam as? Group {
             if someKindOfGroup.hasSubGroups {
                 for group in someKindOfGroup.subGroupDict.values {
-                    mapView.addOverlay(group.polygon)
+                    mapView.addOverlay(group.calculateShortestTourPolygon())
                 }
             }
             else  {
-                mapView.addOverlay(someKindOfGroup.polygon)
+                mapView.addOverlay(someKindOfGroup.calculateShortestTourPolygon())
 
             }
         }

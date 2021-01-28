@@ -41,6 +41,7 @@ class Group {
         }
         teamsDict[team.fullName] = team
         team.groupPath = self.path
+        calculatedShortestTour = nil
         return true
     }
     
@@ -73,6 +74,8 @@ class Group {
     func removeTeam(_ team:Team) -> Team? {
         let team =  self.teamsDict.removeValue(forKey: team.fullName)
         team?.groupPath = nil
+        calculatedShortestTour = nil
+
         return team
     }
     
@@ -146,7 +149,7 @@ class Group {
         return rval
     }
     
-    func shortestTour() -> [Team] {
+    func calculateShortestTour() -> [Team] {
         if let shortest = self.calculatedShortestTour {
             return shortest
         }
@@ -176,12 +179,13 @@ class Group {
             }
         }
         self.calculatedShortestTour = shortest
-        return shortestTour()
+        return calculateShortestTour()
     }
     
-    var polygon: MKPolygon {
-        let coordinates = self.shortestTour().map {$0.coordinate}
-        return MKPolygon(coordinates: coordinates, count: coordinates.count)
+    func calculateShortestTourPolygon() -> MKPolygon {
+        let coordinates = self.calculateShortestTour().map {$0.coordinate}
+        let rval = MKPolygon(coordinates: coordinates, count: coordinates.count)
+        return rval
     }
 
     
