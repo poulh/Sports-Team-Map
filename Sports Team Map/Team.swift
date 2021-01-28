@@ -18,7 +18,7 @@ class Team : NSObject, MKAnnotation, Codable {
     
     var name : String?
     var mascot : String
-    var group : [String]?
+    var groupPath : [String]?
     
     var city : String
     var state : String

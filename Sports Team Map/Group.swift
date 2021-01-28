@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import MapKit
 
 class Group {
     
@@ -18,8 +18,9 @@ class Group {
     var name : String
     var parentGroup : Group? = nil
     var subGroupDict : [String:Group] = [:]
-    
     var teamsDict : [String:Team] = [:]
+    var calculatedShortestTour : [Team]?
+    
     
     var path : [String] {
         if let parent = parentGroup {
@@ -30,12 +31,16 @@ class Group {
         return []
     }
     
+    var hasSubGroups : Bool {
+        return !subGroupDict.isEmpty
+    }
+    
     func addTeam(_ team:Team) -> Bool {
         if subGroupDict.keys.count > 0 {
             return false
         }
         teamsDict[team.fullName] = team
-        team.group = self.path
+        team.groupPath = self.path
         return true
     }
     
@@ -67,7 +72,7 @@ class Group {
     
     func removeTeam(_ team:Team) -> Team? {
         let team =  self.teamsDict.removeValue(forKey: team.fullName)
-        team?.group = nil
+        team?.groupPath = nil
         return team
     }
     
@@ -83,6 +88,14 @@ class Group {
             }
         }
         return nil
+    }
+    
+    func getSubGroup(forTeam team: Team?) -> Group? {
+        guard let team = team,
+              let teamGroupPath = team.groupPath else  {
+            return nil
+        }
+        return self.getSubGroup(atPath: teamGroupPath)
     }
     
     func addSubGroup(withName name: String) -> Group? {
@@ -132,6 +145,45 @@ class Group {
         }
         return rval
     }
+    
+    func shortestTour() -> [Team] {
+        if let shortest = self.calculatedShortestTour {
+            return shortest
+        }
+        
+        var shortest : [Team] = []
+        let tours = permutations(xs: self.teams())
+        var shortestTourDistance : CLLocationDistance = CLLocationDistance.greatestFiniteMagnitude
+        
+        for tour in tours {
+            if var currentStopLocation = tour.last?.locaton {
+                var currentTourDistance : CLLocationDistance = 0.0
+                for nextStopOnTour in tour[0..<tour.count] {
+                    let nextStopLocation = nextStopOnTour.locaton
+                    let nextDistance = currentStopLocation.distance(from: nextStopLocation)
+                    currentTourDistance += nextDistance
+                    if currentTourDistance >= shortestTourDistance {
+                        break
+                    }
+                        
+                    currentStopLocation = nextStopLocation
+                }
+                
+                if currentTourDistance < shortestTourDistance {
+                    shortest = tour
+                    shortestTourDistance = currentTourDistance
+                }
+            }
+        }
+        self.calculatedShortestTour = shortest
+        return shortestTour()
+    }
+    
+    var polygon: MKPolygon {
+        let coordinates = self.shortestTour().map {$0.coordinate}
+        return MKPolygon(coordinates: coordinates, count: coordinates.count)
+    }
+
     
 //    func moveTeamsToSubGroup(withName name: String) -> Group? {
 //        guard let subGroup = addSubGroup(withName: name) else {
